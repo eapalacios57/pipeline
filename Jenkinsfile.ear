@@ -10,6 +10,7 @@ pipeline {
         statusCode = '';
     }  
     stages {
+        /*
         stage('SonarQube analysis') {
            agent any
            //when { anyOf { branch 'develop'; branch 'qa'; branch 'stage'; branch 'master' } }
@@ -34,9 +35,9 @@ pipeline {
                            ${SCANNERHOME}/bin/sonar-scanner -X -Dproject.settings=sonar-project.properties -Dsonar.projectVersion=0.${BUILD_NUMBER}
                          """
                    }
-               }
+               }*/
                echo "SonarQube analysis";             
-           }
+           
         }
             /*steps {
                 script {
