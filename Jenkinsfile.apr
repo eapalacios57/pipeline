@@ -4,14 +4,12 @@ pipeline {
         stage ("Aprobación GC"){
             steps{
                 script{
-                    try {
                         timeout(time: 24, unit: 'HOURS'){
                             echo "######################################################";
                             echo "##########Desea autorizar el despliegue: en ${BRANCH_NAME}?##########";
                             input(
                                 message: 
                                 "######################################################");
-                        }
                     }
                 }
             }
