@@ -7,9 +7,18 @@ pipeline {
                         timeout(time: 24, unit: 'HOURS'){
                             echo "######################################################";
                             echo "##########Desea autorizar el despliegue: en Master?##########";
-                            input(
-                                message: 
-                                "######################################################");
+                            input(message: 'Continue? ', parameters: [
+                                booleanParam(
+                                    defaultValue: false,
+                                    description: '<a href="https://google.com">The project dashboard</a> looks OK',
+                                    name: 'dashboard'
+                                ),
+                                booleanParam(
+                                    defaultValue: false,
+                                    description: 'No new errors in <a href="https://google.com">the project logs</a>',
+                                    name: 'logs'
+                                )
+                            ])
                     }
                 }
             }
