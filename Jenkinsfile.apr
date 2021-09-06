@@ -5,8 +5,6 @@ pipeline {
             steps{
                 script{
                         timeout(time: 24, unit: 'HOURS'){
-                            echo "######################################################";
-                            echo "##########Desea autorizar el despliegue: en Master?##########";
                             input(message: 'Continue? ', parameters: [
                                 booleanParam(
                                     defaultValue: false,
