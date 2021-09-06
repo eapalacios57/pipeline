@@ -6,7 +6,7 @@ pipeline {
                 script{
                         timeout(time: 24, unit: 'HOURS'){
                             echo "######################################################";
-                            echo "##########Desea autorizar el despliegue: en ${BRANCH_NAME}?##########";
+                            echo "##########Desea autorizar el despliegue: en Master?##########";
                             input(
                                 message: 
                                 "######################################################");
