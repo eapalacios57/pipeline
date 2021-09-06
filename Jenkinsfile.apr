@@ -5,8 +5,10 @@ pipeline {
             steps{
                 script{
                         timeout(time: 24, unit: 'HOURS'){
-                            input(message: '<h1>Desea Continuar con el Despliegue</h1>', parameters: [
-                            ])
+                        def userInput = input(id: 'confirm', message: 'Code Approval Request?', 
+                            parameters: [ [$class: 'BooleanParameterDefinition', defaultValue: false, description: 'Approve to Proceed', name: 'approve'] ])
+                            //input(message: '<h1>Desea Continuar con el Despliegue</h1>', parameters: [
+                            //])
                     }
                 }
             }
