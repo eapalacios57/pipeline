@@ -5,7 +5,7 @@ pipeline {
             steps{
                 script{
                         timeout(time: 24, unit: 'HOURS'){
-                            input(message: 'Continue? ', parameters: [
+                            input(message: '<h1>Desea Continuar con el Despliegue</h1>', parameters: [
                             ])
                     }
                 }
