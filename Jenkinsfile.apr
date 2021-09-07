@@ -5,8 +5,10 @@ pipeline {
             steps{
                 script{
                         timeout(time: 24, unit: 'HOURS'){
-                            println 'Waiting for input'
-                            userInput = input id: 'CustomId', message: 'Want to continue?', ok: 'Yes', parameters: [string(defaultValue: 'world', description: '', name: 'hello'), string(defaultValue: '', description: '', name: 'token')]
+                            input(message: 'Desea autorizar el despliegue: en ${BRANCH_NAME}?', 
+                                parameters: [ [$class: 'BooleanParameterDefinition', defaultValue:false, name: 'Aprobar'] ])
+                            //input(message: '<h1>Desea Continuar con el Despliegue</h1>', parameters: [
+                            //])
                     }
                 }
             }
