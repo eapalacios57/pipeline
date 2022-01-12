@@ -1,4 +1,4 @@
-pipeline {  
+pipeline {
     agent any
     stages {
         stage ("Aprobación GC"){
@@ -10,6 +10,7 @@ pipeline {
                     input(message: "-----------------------------------------------------------");
                         //input(message: '<h1>Desea Continuar con el Despliegue</h1>', parameters: [
                         //])
+                    echo "Hello-World!\n"
                     }
                 }
             }
